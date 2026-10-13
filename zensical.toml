@@ -1,0 +1,63 @@
+[project]
+site_name = "DUNE Computing Training"
+site_description = "Tutorials for getting started with DUNE software, computing and physics analysis"
+site_url = "https://dune.github.io/training/"
+repo_url = "https://github.com/DUNE/training"
+repo_name = "DUNE/training"
+
+nav = [
+  { "Training catalog" = "index.md" },
+  { "Past training events" = "past-events.md" },
+  { "Add a tutorial" = "contributing.md" },
+]
+
+extra_css = ["stylesheets/extra.css"]
+extra_javascript = ["javascripts/filters.js"]
+
+[project.theme]
+logo = "images/dune-logo.jpeg"
+favicon = "images/favicon.png"
+features = [
+  "navigation.tabs",
+  "navigation.top",
+  "navigation.footer",
+  "search.suggest",
+  "search.highlight",
+  "content.code.copy",
+]
+
+[project.theme.icon]
+repo = "fontawesome/brands/github"
+
+[[project.theme.palette]]
+scheme = "default"
+primary = "custom"
+accent = "custom"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+scheme = "slate"
+primary = "custom"
+accent = "custom"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to light mode"
+
+# Cards on the home page come from data/modules.yml through the Python macros
+# in main.py. Strict mode makes a missing data file or a typo in a variable
+# name fail the build, because Zensical skips missing YAML files silently.
+[project.plugins.macros]
+module_name = "main"
+include_yaml = ["data/modules.yml"]
+on_undefined = "strict"
+on_error_fail = true
+
+[project.markdown_extensions]
+tables = {}
+attr_list = {}
+md_in_html = {}
+admonition = {}
+toc = { permalink = true }
+pymdownx.details = {}
+pymdownx.superfences = {}
+pymdownx.highlight = { anchor_linenums = true }

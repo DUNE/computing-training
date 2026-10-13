@@ -1,0 +1,36 @@
+name: Documentation
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+# GitHub Pages accepts one deployment at a time. Without this, two merges a
+# few seconds apart race and the second deploy fails.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/configure-pages@v6
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - run: curl -LsSf https://astral.sh/uv/install.sh | sh
+      - run: echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - run: uv sync --locked
+      - run: ./scripts/check-public-content.sh
+      - run: uv run --locked zensical build --clean
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+      - uses: actions/deploy-pages@v5
+        id: deployment

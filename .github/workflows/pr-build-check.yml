@@ -1,0 +1,19 @@
+name: PR build check
+on:
+  pull_request:
+    branches:
+      - main
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - run: curl -LsSf https://astral.sh/uv/install.sh | sh
+      - run: echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - run: uv sync --locked
+      - run: ./scripts/check-public-content.sh
+      - run: uv run --locked zensical build --clean

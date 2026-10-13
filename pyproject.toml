@@ -1,0 +1,11 @@
+[project]
+name = "dune-training"
+version = "0.1.0"
+description = "Landing page for DUNE computing and analysis training"
+requires-python = ">=3.10"
+dependencies = [
+    "zensical",
+]
+
+[tool.uv]
+package = false
