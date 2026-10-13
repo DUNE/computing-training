@@ -1,0 +1,342 @@
+# Card data for the DUNE training landing page.
+#
+# Every card on docs/index.md comes from this file. To add a tutorial, add an
+# entry to the right section; no page or template edits are needed.
+#
+# Card fields:
+#   title        (required) card heading
+#   url          (required) where the title links: the rendered site if there is one, otherwise the repo
+#   description  (required) one or two sentences on what the learner does
+#   logo         the project's own logo, a file in docs/images/logos/ (see LOGOS.md)
+#   icon         a Lucide icon name (https://lucide.dev/icons/), for projects with
+#                no logo of their own. Every card needs a logo or an icon
+#   provider     (required) dune | hsf | carpentries
+#   level        (required) prerequisite | beginner | intermediate | advanced
+#   repo         link to the source repository
+#   video        link to recordings
+#   status       beta | in-development | coming-soon (omit for stable material)
+
+# The numbered "Start here" path. Same fields as a card, plus `step` and an
+# `emoji` shown large on the card in place of a logo.
+learning_path:
+  - step: 1
+    title: Computing Basics
+    url: https://dune.github.io/computing-basics/
+    repo: https://github.com/DUNE/computing-basics
+    emoji: "💻"
+    provider: dune
+    level: beginner
+    description: >-
+      Log in to the DUNE machines and find your way around: storage spaces,
+      CVMFS, finding data with MetaCat and Rucio, and setting up software with
+      UPS and Spack.
+  - step: 2
+    title: LArSoft Basics
+    url: https://dune.github.io/computing-basics-larsoft/
+    repo: https://github.com/DUNE/computing-basics-larsoft
+    emoji: "🧩"
+    provider: dune
+    level: beginner
+    description: >-
+      Run art and LArSoft jobs, build code with mrb, and modify an existing
+      LArSoft module.
+  - step: 3
+    title: Batch Computing
+    url: https://dune.github.io/computing-basics-batch/
+    repo: https://github.com/DUNE/computing-basics-batch
+    emoji: "🌐"
+    provider: dune
+    level: intermediate
+    description: >-
+      Submit and monitor jobs with justIN and on the grid, and debug the ones
+      that fail.
+
+# HSF and Carpentries lessons to do before step 1 if the shell, git or Python
+# are new to you. Shown as a compact strip above the learning path.
+before_you_start:
+  - title: The Unix Shell
+    logo: unix-shell.png
+    url: https://hsf-training.github.io/hsf-training-unix-shell/
+  - title: Version control with git
+    logo: git-logo.svg
+    url: https://hsf-training.github.io/git-novice/
+  - title: Programming with Python
+    logo: python-logo.svg
+    url: https://swcarpentry.github.io/python-novice-inflammation/
+  - title: SSH
+    logo: ssh-icon.svg
+    url: https://hsf-training.github.io/hsf-training-ssh-webpage/
+
+sections:
+  - id: dune-tools
+    title: DUNE tools and reference
+    intro: >-
+      Documentation for the DUNE services you will meet once you start
+      running jobs and handling data.
+    cards:
+      - title: Hardware Database (HWDB)
+        url: https://dune.github.io/computing-HWDB/
+        repo: https://github.com/DUNE/computing-HWDB
+        logo: db-stack-1.svg
+        provider: dune
+        level: beginner
+        status: in-development
+        description: >-
+          Record detector components through the web UI, the REST API, the
+          iPad app and the Python upload tool.
+      - title: Conditions Database
+        url: https://dune.github.io/computing-condDB/
+        repo: https://github.com/DUNE/computing-condDB
+        logo: db-stack-2.svg
+        provider: dune
+        level: intermediate
+        description: Store and read run conditions for DUNE and ProtoDUNE data.
+      - title: ProtoDUNE Conditions Data Service
+        url: https://dune.github.io/frontier-condb2/
+        repo: https://github.com/DUNE/frontier-condb2
+        logo: db-stack-3.svg
+        provider: dune
+        level: advanced
+        description: How ProtoDUNE conditions data are served to jobs through Frontier.
+      - title: Data Catalog (MetaCat)
+        url: https://dune.github.io/DataCatalogDocs/
+        repo: https://github.com/DUNE/DataCatalogDocs
+        logo: metacat-logo.png
+        provider: dune
+        level: beginner
+        description: >-
+          DUNE's metadata conventions and worked MetaCat queries for finding
+          files and datasets.
+      - title: justIN documentation
+        url: https://github.com/DUNE/dune-justin/tree/main/docs
+        repo: https://github.com/DUNE/dune-justin
+        logo: justin-logo.svg
+        provider: dune
+        level: intermediate
+        description: >-
+          Reference and cookbook for justIN, DUNE's workflow system for
+          running jobs at scale.
+      - title: Computing FAQ
+        url: https://dune.github.io/FAQ/
+        repo: https://github.com/DUNE/FAQ
+        icon: circle-help
+        provider: dune
+        level: beginner
+        description: >-
+          Answers on FHiCL, git and MetaCat, plus the monthly DUNE computing
+          newsletters.
+      - title: abcDUNE glossary
+        url: https://dune.github.io/abcdune/
+        repo: https://github.com/DUNE/abcdune
+        icon: book-a
+        provider: dune
+        level: prerequisite
+        description: Look up the acronyms and jargon you will hear in DUNE meetings.
+      - title: DUNE Spack Project
+        logo: spack-logo.svg
+        url: https://dune.github.io/dune-spack-project/
+        repo: https://github.com/DUNE/dune-spack-project
+        provider: dune
+        level: intermediate
+        description: >-
+          Build and develop DUNE software with Spack and MPD, the replacement
+          for UPS and mrb.
+      - title: DUNE Phlex Project
+        logo: phlex-logo.svg
+        url: https://dune.github.io/dune-phlex-project/
+        repo: https://github.com/DUNE/dune-phlex-project
+        provider: dune
+        level: advanced
+        description: >-
+          Workflow reference and conventions for moving DUNE code from art to
+          the Phlex framework.
+
+  - id: physics
+    title: Physics and analysis
+    intro: >-
+      Tutorials and example code for simulating DUNE detectors and analysing
+      their output.
+    cards:
+      - title: ND simulation tutorial
+        url: https://github.com/DUNE/tutorial-DUNENDSim
+        repo: https://github.com/DUNE/tutorial-DUNENDSim
+        icon: atom
+        provider: dune
+        level: intermediate
+        description: >-
+          Simulate events in the ND-LAr near detector, then analyse the HDF5
+          output in a Jupyter notebook. Runs on the DUNE machines or in Binder.
+      - title: DUNE plot style
+        logo: dune-plot-datamc.png
+        url: https://github.com/DUNE/dune_plot_style
+        repo: https://github.com/DUNE/dune_plot_style
+        provider: dune
+        level: beginner
+        description: >-
+          The official DUNE style for matplotlib and ROOT plots, with
+          examples of 1D, 2D, stacked and data/MC plots.
+      - title: LArSoft examples
+        url: https://github.com/DUNE/duneexamples
+        repo: https://github.com/DUNE/duneexamples
+        icon: file-code
+        provider: dune
+        level: intermediate
+        description: >-
+          Example LArSoft modules and gallery ROOT scripts to copy and adapt
+          after LArSoft Basics.
+      - title: ndlar_flow
+        logo: ndlar-2x2-logo.png
+        url: https://ndlar-flow.readthedocs.io/
+        repo: https://github.com/DUNE/ndlar_flow
+        provider: dune
+        level: advanced
+        description: >-
+          Reconstruction for the near detector and its 2x2 prototype, written
+          as h5flow modules. Includes an analysis guide.
+      - title: h5flow
+        logo: hdf5-logo.png
+        url: https://h5flow.readthedocs.io/
+        repo: https://github.com/DUNE/h5flow
+        provider: dune
+        level: advanced
+        description: The Python framework behind ndlar_flow for parallel processing of HDF5 files.
+      - title: WAFFLES
+        logo: waffles-logo.png
+        url: https://waffles.readthedocs.io/
+        repo: https://github.com/DUNE/waffles
+        provider: dune
+        level: intermediate
+        description: >-
+          Analyse photon detector waveforms from ProtoDUNE with this Python
+          framework and its examples.
+      - title: MaCh3 DUNE
+        logo: mach3-logo.png
+        url: https://dune.github.io/MaCh3_DUNE/
+        repo: https://github.com/DUNE/MaCh3_DUNE
+        provider: dune
+        level: advanced
+        description: >-
+          DUNE's implementation of the MaCh3 Bayesian oscillation fitter, with
+          Docker images to get started.
+      - title: CAFAna (lblpwgtools)
+        url: https://github.com/DUNE/lblpwgtools
+        repo: https://github.com/DUNE/lblpwgtools
+        logo: cafana-logo.png
+        provider: dune
+        level: advanced
+        description: Long-baseline oscillation analysis tools built on CAF files.
+      - title: duneanaobj
+        url: https://github.com/DUNE/duneanaobj
+        repo: https://github.com/DUNE/duneanaobj
+        icon: braces
+        provider: dune
+        level: advanced
+        description: The StandardRecord that defines what is in a DUNE CAF file.
+      - title: Phlex examples for DUNE
+        logo: phlex-logo.svg
+        url: https://github.com/DUNE/dune-examples
+        repo: https://github.com/DUNE/dune-examples
+        provider: dune
+        level: intermediate
+        status: coming-soon
+        description: Example code for DUNE's Phlex-based software stack.
+
+  - id: hsf-software
+    title: Software skills from HSF
+    intro: >-
+      HEP Software Foundation lessons on the tools that DUNE software is built
+      and shipped with.
+    cards:
+      - title: Advanced git
+        logo: git-logo.svg
+        url: https://learngitbranching.js.org/
+        provider: hsf
+        level: beginner
+        description: Practise branching, rebasing and merging in an interactive game.
+      - title: Containers with Apptainer
+        logo: apptainer-logo.svg
+        url: https://hsf-training.github.io/hsf-training-singularity-webpage/
+        repo: https://github.com/hsf-training/hsf-training-singularity-webpage
+        provider: hsf
+        level: beginner
+        description: >-
+          Run software inside Singularity/Apptainer containers, as you do on
+          the DUNE machines.
+      - title: Docker
+        logo: docker-logo.svg
+        url: https://hsf-training.github.io/hsf-training-docker/
+        repo: https://github.com/hsf-training/hsf-training-docker
+        provider: hsf
+        level: intermediate
+        description: Build and run your own container images.
+      - title: CMake
+        logo: cmake-logo.svg
+        url: https://hsf-training.github.io/hsf-training-cmake-webpage/
+        repo: https://github.com/hsf-training/hsf-training-cmake-webpage
+        provider: hsf
+        level: intermediate
+        description: Write and understand the CMake build files used across DUNE packages.
+      - title: CI/CD on GitHub
+        logo: github-logo.svg
+        url: https://hsf-training.github.io/hsf-training-cicd-github/
+        repo: https://github.com/hsf-training/hsf-training-cicd-github
+        provider: hsf
+        level: intermediate
+        description: Test and build your code automatically with GitHub Actions.
+      - title: HEP C++ course
+        logo: cpp-logo.svg
+        url: https://github.com/hsf-training/cpluspluscourse
+        repo: https://github.com/hsf-training/cpluspluscourse
+        provider: hsf
+        level: intermediate
+        description: Modern C++ from the basics to expert topics, with exercises.
+
+  - id: hsf-analysis
+    title: Analysis skills from HSF
+    intro: General HEP analysis lessons that apply directly to DUNE data.
+    cards:
+      - title: Matplotlib for HEP
+        logo: matplotlib-logo.svg
+        url: https://hsf-training.github.io/hsf-training-matplotlib/
+        repo: https://github.com/hsf-training/hsf-training-matplotlib
+        provider: hsf
+        level: beginner
+        status: beta
+        description: Make publication-quality physics plots. Pairs with the DUNE plot style.
+      - title: ROOT
+        logo: root-logo.svg
+        url: https://github.com/root-project/student-course
+        repo: https://github.com/root-project/student-course
+        provider: hsf
+        level: beginner
+        description: The ROOT team's introductory course for students.
+      - title: Scikit-HEP
+        logo: scikithep-logo.svg
+        url: https://hsf-training.github.io/hsf-training-scikit-hep-webpage/
+        repo: https://github.com/hsf-training/hsf-training-scikit-hep-webpage
+        provider: hsf
+        level: intermediate
+        description: Read ROOT files and analyse them in Python with uproot, awkward and hist.
+      - title: Array-oriented programming
+        logo: awkward-logo.svg
+        url: https://hsf-training.github.io/array-oriented-programming/
+        repo: https://github.com/hsf-training/array-oriented-programming
+        provider: hsf
+        level: intermediate
+        description: Think in arrays with NumPy and Awkward Array for fast columnar analysis.
+      - title: Deep learning for HEP
+        logo: ml-hep.svg
+        url: https://hsf-training.github.io/deep-learning-intro-for-hep/
+        repo: https://github.com/hsf-training/deep-learning-intro-for-hep
+        provider: hsf
+        level: advanced
+        description: Neural networks from first principles, aimed at particle physicists.
+      - title: LHCb Analysis Essentials
+        logo: lhcb-logo.svg
+        url: https://hsf-training.github.io/analysis-essentials/
+        repo: https://github.com/hsf-training/analysis-essentials
+        provider: hsf
+        level: beginner
+        description: >-
+          A complete starter course covering shell, Python, ROOT and git in
+          one place.
