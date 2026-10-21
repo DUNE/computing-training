@@ -1,8 +1,5 @@
 ---
 title: DUNE Computing Training
-hide:
-  - navigation
-  - toc
 ---
 
 <section class="dt-hero" markdown>
@@ -33,7 +30,7 @@ Work through these three DUNE lessons in order. Each one builds on the last.
 {{ filter_bar(sections) }}
 
 {% for section in sections %}
-<h3 class="dt-section" id="{{ section.id }}">{{ section.title }}</h3>
+### {{ section.title }} { #{{ section.id }} .dt-section }
 
 <p class="dt-section__intro">{{ section.intro }}</p>
 

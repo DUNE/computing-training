@@ -18,8 +18,8 @@ extra_javascript = ["javascripts/filters.js"]
 logo = "images/dune-logo.jpeg"
 favicon = "images/favicon.png"
 features = [
-  "navigation.tabs",
   "navigation.top",
+  "toc.integrate",
   "navigation.footer",
   "search.suggest",
   "search.highlight",
