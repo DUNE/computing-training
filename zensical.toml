@@ -1,9 +1,9 @@
 [project]
 site_name = "DUNE Computing Training"
 site_description = "Tutorials for getting started with DUNE software, computing and physics analysis"
-site_url = "https://dune.github.io/training/"
-repo_url = "https://github.com/DUNE/training"
-repo_name = "DUNE/training"
+site_url = "https://dune.github.io/computing-training/"
+repo_url = "https://github.com/DUNE/computing-training"
+repo_name = "DUNE/computing-training"
 
 nav = [
   { "Training catalog" = "index.md" },

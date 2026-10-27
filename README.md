@@ -1,6 +1,6 @@
 # DUNE Computing Training
 
-Source for the DUNE training landing page at <https://dune.github.io/training/>. The page collects the DUNE Software and Computing lessons ([Computing Basics](https://dune.github.io/computing-basics/), [LArSoft Basics](https://dune.github.io/computing-basics-larsoft/), [Batch Computing](https://dune.github.io/computing-basics-batch/)), DUNE tool documentation, physics and analysis tutorials, and starter lessons from the [HSF Training Center](https://hsf-training.org/training-center/).
+Source for the DUNE training landing page at <https://dune.github.io/computing-training/>. The page collects the DUNE Software and Computing lessons ([Computing Basics](https://dune.github.io/computing-basics/), [LArSoft Basics](https://dune.github.io/computing-basics-larsoft/), [Batch Computing](https://dune.github.io/computing-basics-batch/)), DUNE tool documentation, physics and analysis tutorials, and starter lessons from the [HSF Training Center](https://hsf-training.org/training-center/).
 
 The site is built with [Zensical](https://zensical.org/), following the setup of [dune-phlex-project](https://github.com/DUNE/dune-phlex-project) and [dune-spack-project](https://github.com/DUNE/dune-spack-project).
 
