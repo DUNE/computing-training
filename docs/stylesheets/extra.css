@@ -116,6 +116,14 @@
   text-decoration: none;
 }
 
+/* White on the dark-mode orange is only 2.8:1. Dark text gives 6.5:1, and
+   8.2:1 on the lighter hover orange. */
+[data-md-color-scheme="slate"] .md-typeset .md-button--primary,
+[data-md-color-scheme="slate"] .md-typeset .md-button--primary:hover,
+[data-md-color-scheme="slate"] .md-typeset .md-button--primary:focus {
+  color: #14171C;
+}
+
 /* ---------- Learning path ---------- */
 
 .md-typeset .dt-path {
