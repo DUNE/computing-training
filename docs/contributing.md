@@ -1,6 +1,6 @@
 # Add a tutorial
 
-Every card on the [training catalog](index.md) comes from one file, [`data/modules.yml`](https://github.com/DUNE/training/blob/main/data/modules.yml). To list a tutorial, add an entry to the right section of that file and open a pull request. You do not need to edit any page.
+Every card on the [training catalog](index.md) comes from one file, [`data/modules.yml`](https://github.com/DUNE/computing-training/blob/main/data/modules.yml). To list a tutorial, add an entry to the right section of that file and open a pull request. You do not need to edit any page.
 
 ## A card entry
 
@@ -49,4 +49,4 @@ UV_PROJECT_ENVIRONMENT=~/venvs/dune-training uv sync --locked
 UV_PROJECT_ENVIRONMENT=~/venvs/dune-training uv run --locked zensical serve
 ```
 
-Then open <http://localhost:8000/training/>.
+Then open <http://localhost:8000/computing-training/>.
