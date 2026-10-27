@@ -13,15 +13,15 @@ Self-paced tutorials for new collaborators: from your first login to the DUNE ma
 </div>
 </section>
 
+<p class="dt-subhead">New to the shell, git or Python? Do these first:</p>
+
+{{ prereq_pills(before_you_start) }}
+
 ## Start here { #start-here }
 
 Work through these three DUNE lessons in order. Each one builds on the last.
 
 {{ path_cards(learning_path) }}
-
-<p class="dt-subhead">New to the shell, git or Python? Do these first:</p>
-
-{{ prereq_pills(before_you_start) }}
 
 ## Find a tutorial { #catalog }
 
