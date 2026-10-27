@@ -432,17 +432,22 @@
   }
 }
 
-/* Search box on the navy header, in both schemes */
-.md-header .md-search__form {
-  background-color: rgba(255, 255, 255, 0.12);
+/* Search button on the navy header: the dark-mode look in both schemes.
+   Zensical renders search as a button, not the Material form and input. */
+.md-header .md-search__button {
+  color: rgba(226, 228, 233, 0.82);
+  background-color: rgba(226, 228, 233, 0.12);
 }
 
-.md-header .md-search__form:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+.md-header .md-search__button:hover {
+  background-color: rgba(226, 228, 233, 0.2);
 }
 
-.md-header .md-search__input,
-.md-header .md-search__input::placeholder,
-.md-header .md-search__icon {
-  color: #fff;
+.md-header .md-search__button::before {
+  background-color: rgba(226, 228, 233, 0.82);
+}
+
+.md-header .md-search__button::after {
+  color: rgba(226, 228, 233, 0.82);
+  background-color: rgba(11, 12, 15, 0.54);
 }
