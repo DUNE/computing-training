@@ -47,7 +47,7 @@ Work through these three DUNE lessons in order. Each one builds on the last.
 **Email.** Write to [dune-computing-training@fnal.gov](mailto:dune-computing-training@fnal.gov).
 </div>
 <div markdown>
-**Found a problem in a lesson?** Open an issue on that lesson's repository, linked from its card.
+**Found a problem in a lesson?** Open an issue on that lesson's repository, linked from its card, or just [open an issue on this site's repository](https://github.com/DUNE/computing-training/issues).
 </div>
 </div>
 

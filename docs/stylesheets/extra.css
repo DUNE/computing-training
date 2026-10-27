@@ -13,7 +13,9 @@
   --md-accent-fg-color--transparent: rgba(213, 94, 0, 0.1);
 
   --dt-vermilion: #D55E00;
-  --dt-navy: #0E2238;
+  /* Softer than the DUNE navy #0E2238. The logo's light blue keeps 5:1 and
+     its orange 3.8:1 against it, both above the 3:1 needed for graphics. */
+  --dt-navy: #1F3A57;
   --dt-card-bg: var(--md-default-bg-color);
   --dt-card-border: rgba(0, 0, 0, 0.12);
   --dt-muted: rgba(0, 0, 0, 0.62);
@@ -40,8 +42,8 @@
   --dt-status-fg: #F5CF73;
 }
 
-/* The header uses the DUNE navy rather than the orange accent, so the
-   colour logo stays legible. */
+/* The header uses a soft navy rather than the orange accent, so the
+   transparent colour logo stays legible. */
 .md-header,
 .md-tabs {
   background-color: var(--dt-navy);
@@ -57,6 +59,12 @@
 
 .md-tabs .md-tabs__link {
   opacity: 0.8;
+}
+
+/* The transparent mark is wide and short, so give it a little more height
+   than the theme's 1.2rem default. */
+.md-header__button.md-logo img {
+  height: 1.6rem;
 }
 
 .md-tabs .md-tabs__item--active .md-tabs__link,
@@ -106,6 +114,14 @@
 .md-typeset .dt-hero a.md-button {
   margin: 0;
   text-decoration: none;
+}
+
+/* White on the dark-mode orange is only 2.8:1. Dark text gives 6.5:1, and
+   8.2:1 on the lighter hover orange. */
+[data-md-color-scheme="slate"] .md-typeset .md-button--primary,
+[data-md-color-scheme="slate"] .md-typeset .md-button--primary:hover,
+[data-md-color-scheme="slate"] .md-typeset .md-button--primary:focus {
+  color: #14171C;
 }
 
 /* ---------- Learning path ---------- */
@@ -416,17 +432,22 @@
   }
 }
 
-/* Search box on the navy header, in both schemes */
-.md-header .md-search__form {
-  background-color: rgba(255, 255, 255, 0.12);
+/* Search button on the navy header: the dark-mode look in both schemes.
+   Zensical renders search as a button, not the Material form and input. */
+.md-header .md-search__button {
+  color: rgba(226, 228, 233, 0.82);
+  background-color: rgba(226, 228, 233, 0.12);
 }
 
-.md-header .md-search__form:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+.md-header .md-search__button:hover {
+  background-color: rgba(226, 228, 233, 0.2);
 }
 
-.md-header .md-search__input,
-.md-header .md-search__input::placeholder,
-.md-header .md-search__icon {
-  color: #fff;
+.md-header .md-search__button::before {
+  background-color: rgba(226, 228, 233, 0.82);
+}
+
+.md-header .md-search__button::after {
+  color: rgba(226, 228, 233, 0.82);
+  background-color: rgba(11, 12, 15, 0.54);
 }
