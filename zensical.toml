@@ -15,7 +15,7 @@ extra_css = ["stylesheets/extra.css"]
 extra_javascript = ["javascripts/filters.js"]
 
 [project.theme]
-logo = "images/dune-logo.jpeg"
+logo = "images/dune-logo.png"
 favicon = "images/favicon.png"
 features = [
   "navigation.top",
